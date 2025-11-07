@@ -9,14 +9,14 @@ const JobListings = ({ isHome = false }) => {
 
     useEffect(() => {
         const fetchJobs = async () => {
-            const apiurl = isHome ? '/api/jobs?_limit=3' : '/api/jobs'
+            const apiurl = isHome ? 'https://react-jobs-r7tp.onrender.com?_limit=3' : 'https://react-jobs-r7tp.onrender.com'
             try {
                 const res = await fetch(apiurl)
                 if (!res.ok) {
                     throw new error(`HTTP error! status: ${res.status}`);
                 }
                 const text = await res.text(); // get raw text first
-                const data =  text ? JSON.parse(text) : []
+                const data = text ? JSON.parse(text) : []
 
                 setJobs(data)
             } catch (error) {
