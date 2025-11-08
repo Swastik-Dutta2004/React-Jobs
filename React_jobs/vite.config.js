@@ -10,7 +10,7 @@ export default defineConfig({
         server:{
           proxy: {
       '/api': {
-        target: 'https://react-jobs-r7tp.onrender.com/jobs',
+        target: 'https://react-jobs-r7tp.onrender.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
