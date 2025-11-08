@@ -130,10 +130,18 @@ const JobPage = ({deleteJob}) => {
 
 
 const JobLoader = async ({ params }) => {
-    const res = await fetch(`/api/jobs/${params.id}`);
-    const data = await res.json();
-    return data
-}
+    const apiUrl = `https://react-jobs-r7tp.onrender.com/jobs/${params.id}`;
+
+    const res = await fetch(apiUrl);
+    if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const text = await res.text();
+    const data = text ? JSON.parse(text) : {};
+
+    return data;
+};
 
 
 export { JobPage as default, JobLoader }
