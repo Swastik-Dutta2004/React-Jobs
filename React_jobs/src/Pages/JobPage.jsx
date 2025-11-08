@@ -130,7 +130,7 @@ const JobPage = ({deleteJob}) => {
 
 
 const JobLoader = async ({ params }) => {
-    const apiUrl = `api/jobs/${params.id}`;
+    const apiUrl = `https://react-jobs-r7tp.onrender.com/jobs/${params.id}`;
 
     const res = await fetch(apiUrl);
     if (!res.ok) {
