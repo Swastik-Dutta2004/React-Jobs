@@ -48,7 +48,7 @@ const App = () => {
       <Route index element={<HomePage />} />
       <Route path='/jobs' element={<JobsPage />} />
       <Route path='/Add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
-      <Route path='//https://react-jobs-r7tp.onrender.com/jobs/:id' element={<JobPage deleteJob = {deleteJob} />} loader={JobLoader} />
+      <Route path='/api/:id' element={<JobPage deleteJob = {deleteJob} />} loader={JobLoader} />
       <Route path='/edit-jobs/:id' element={<EditJobPage updateJobSubmit = {updateJob}/>} loader={JobLoader} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
