@@ -13,7 +13,7 @@ import EditJobPage from './Pages/EditJobPage'
 const App = () => {
 
   const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
+    const res = await fetch('https://react-jobs-r7tp.onrender.com/jobs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const App = () => {
 
 
   const deleteJob = async(id) => {
-    const res = await fetch(`/api/jobs/${id}`,{
+    const res = await fetch(`https://react-jobs-r7tp.onrender.com/jobs/${id}`,{
       method: 'DELETE',
       
     })
@@ -33,7 +33,7 @@ const App = () => {
   }
 
   const updateJob = async (job) => {
-    const res = await fetch(`/api/jobs/${job.id}`, {
+    const res = await fetch(`https://react-jobs-r7tp.onrender.com/jobs/${job.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
