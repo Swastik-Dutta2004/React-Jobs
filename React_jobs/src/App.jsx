@@ -24,10 +24,10 @@ const App = () => {
   };
 
 
-  const deleteJob = async (id) => {
-    const res = await fetch(`https://react-jobs-r7tp.onrender.com/jobs/${id}`, {
+  const deleteJob = async(id) => {
+    const res = await fetch(`https://react-jobs-r7tp.onrender.com/jobs/${id}`,{
       method: 'DELETE',
-
+      
     })
     return
   }
@@ -47,13 +47,9 @@ const App = () => {
     <Route path='/' element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path='/jobs' element={<JobsPage />} />
-      <Route path='/Add-job' element={<AddJobPage addJobSubmit={addJob} />} />
-      <Route
-        path='/jobs/:id'
-        loader={JobLoader}
-        element={<JobPage deleteJob={deleteJob} />}
-      />
-      <Route path='/edit-jobs/:id' element={<EditJobPage updateJobSubmit={updateJob} />} loader={JobLoader} />
+      <Route path='/Add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
+      <Route path='/https://react-jobs-r7tp.onrender.com/jobs/:id' element={<JobPage deleteJob = {deleteJob} />} loader={JobLoader} />
+      <Route path='/edit-jobs/:id' element={<EditJobPage updateJobSubmit = {updateJob}/>} loader={JobLoader} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
   ))
